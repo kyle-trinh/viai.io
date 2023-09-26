@@ -34,7 +34,7 @@ import constructingSvg from '../constructing.svg'
 			</defs>
 		</svg>
 		<h1>Welcome to <span class="text-gradient">Viai.io</span></h1>
-		<img class="constructing-svg" src={constructingSvg.src} alt="" />
+		<img class="constructing-svg" src={constructingSvg.src} alt="Constructing..." />
 		<p class="instructions">
 			We're currently in the process of building an <strong>extraordinary investment platform</strong> powered by AI. 
 			Our website is under construction, but we're working diligently to bring you <code>the future of finance</code>.
@@ -71,23 +71,19 @@ import constructingSvg from '../constructing.svg'
 		margin-bottom: 1em;
 	}
 	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+		color: var(--accent);
 	}
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		background: var(--accent);
 		padding: 1.5rem;
 		border-radius: 8px;
 	}
 	.instructions code {
 		font-size: 0.8em;
 		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
+		background: var(--accent-light);
 		color: rgb(var(--accent-light));
 		border-radius: 4px;
 		padding: 0.3em 0.4em;
@@ -102,7 +98,7 @@ import constructingSvg from '../constructing.svg'
 		padding: 0;
 	}
 	.constructing-svg {
-		width: 100%;
+		width: 800px;
 		margin-top: 60px;
 		margin-bottom: 60px
 	}
