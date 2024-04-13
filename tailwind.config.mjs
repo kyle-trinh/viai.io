@@ -9,7 +9,8 @@ export default {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        black: 'salmon',
+        bgPrimary: '#E0ECFF',
+        primary: '#4986F5',
       },
     },
   },

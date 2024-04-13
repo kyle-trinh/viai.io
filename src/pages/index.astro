@@ -9,15 +9,15 @@ const navItems = [
   },
   {
     name: 'Why?',
-    path: '/#why',
+    path: '#why',
   },
   {
     name: 'Sample',
-    path: '/#sample',
+    path: '#sample',
   },
   {
     name: 'Our team',
-    path: '/#team',
+    path: '#team',
   },
 ];
 
@@ -37,24 +37,24 @@ const heroSection = {
     <meta name='generator' content={Astro.generator} />
     <title>Document</title>
   </head>
-  <body class='bg-blue-200 text-gray-800 font-light'>
+  <body class='bg-bgPrimary text-gray-800 font-light'>
     <header class='h-screen relative'>
       <div
         class='flex flex-col gap-1 absolute top-6 left-6 mobile-nav-btn z-50 md:hidden'
       >
-        <div class='w-9 h-1 bg-blue-600'></div>
-        <div class='w-9 h-1 bg-blue-600'></div>
-        <div class='w-9 h-1 bg-blue-600'></div>
+        <div class='w-9 h-1 bg-gray-600'></div>
+        <div class='w-9 h-1 bg-gray-600'></div>
+        <div class='w-9 h-1 bg-gray-600'></div>
       </div>
       <nav
         class='container mx-auto flex md:justify-between items-center py-12 px-12 md:px-6 md:relative absolute top-0 left-0 md:bg-transparent bg-white h-screen md:h-auto w-4/5 md:w-auto md:flex-row flex-col justify-start z-40 md:gap-0 gap-8 -translate-x-full md:translate-x-0 nav-bar transition-transform'
       >
-        <a class='font-bold text-3xl'>SafeRX</a>
+        <a class='font-bold text-3xl text-blue-600' href='/'>SafeRX</a>
         <ul class='flex justify-end items-center gap-8 md:flex-row flex-col'>
           {
             navItems.map(({ name, path }) => {
               return (
-                <li>
+                <li class='menu-item'>
                   <a href={path}>{name}</a>
                 </li>
               );
@@ -63,7 +63,7 @@ const heroSection = {
           <li>
             <a
               href='/#contact'
-              class='bg-blue-500 px-6 py-3 rounded-full text-white'
+              class='bg-primary px-6 py-3 rounded-full text-white menu-item'
               >Contact us</a
             >
           </li>
@@ -76,15 +76,15 @@ const heroSection = {
           class='col-span-full lg:col-span-5 lg:col-start-1 xl:col-start-2 xl:col-span-6 2xl:col-start-1 2xl:col-span-6 flex flex-col justify-end items-center px-2 gap-3 2xl:gap-6 2xl:mt-10 sm:mb-10 md:px-12 lg:items-start lg:justify-start m'
         >
           <h1
-            class='xl:text-7xl font-bold text-blue-500 lg:text-6xl text-3xl sm:text-5xl text-center lg:text-left'
+            class='xl:text-7xl font-bold text-primary lg:text-6xl text-3xl sm:text-5xl text-center lg:text-left'
           >
             {heroSection.title}
           </h1>
-          <p class='lg:text-lg text-gray-500 text-center lg:text-left'>
+          <p class='lg:text-lg text-gray-600 text-center lg:text-left'>
             {heroSection.description}
           </p>
           <a
-            class='bg-blue-500 px-6 py-3 rounded-full text-white'
+            class='bg-primary px-6 py-3 rounded-full text-white'
             href='/#contact'>Discover more</a
           >
         </div>
@@ -106,5 +106,20 @@ const heroSection = {
     document.querySelector('.mobile-nav-btn')?.addEventListener('click', () => {
       document.querySelector('.nav-bar')?.classList.toggle('translate-x-0');
     });
+
+    const menuItems = document.querySelectorAll('.menu-item');
+    for (const menuItem of menuItems) {
+      console.log(menuItem);
+      menuItem.addEventListener('click', () => {
+        if (
+          document
+            .querySelector('.nav-bar')
+            ?.classList.contains('-translate-x-full')
+        ) {
+          console.log('adding');
+          document.querySelector('.nav-bar')?.classList.remove('translate-x-0');
+        }
+      });
+    }
   </script>
 </html>
