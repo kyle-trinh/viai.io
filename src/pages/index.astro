@@ -69,22 +69,22 @@ const heroSection = {
           </li>
         </ul>
       </nav>
-      <div class='absolute bottom-0 grid grid-cols-12 h-[90vh] sm:h-[80vh]'>
+      <div
+        class='absolute bottom-0 grid grid-cols-12 h-[90vh] sm:h-[80vh] 2xl:max-w-[1440px] 2xl:w-full 2xl:-translate-x-1/2 2xl:left-1/2'
+      >
         <div
-          class='col-span-full lg:col-span-5 lg:col-start-1 2xl:col-start-3 2xl:col-span-4 xl:ml-24 flex flex-col justify-end items-center px-2 gap-3 2xl:gap-6 2xl:ml-24 2xl:mt-10 sm:mb-10 md:px-12 lg:items-start lg:justify-start'
+          class='col-span-full lg:col-span-5 lg:col-start-1 xl:col-start-2 xl:col-span-6 2xl:col-start-1 2xl:col-span-6 flex flex-col justify-end items-center px-2 gap-3 2xl:gap-6 2xl:mt-10 sm:mb-10 md:px-12 lg:items-start lg:justify-start m'
         >
           <h1
-            class='xl:text-7xl 2xl:text-9xl font-bold text-blue-500 lg:text-6xl text-3xl sm:text-5xl text-center lg:text-left'
+            class='xl:text-7xl font-bold text-blue-500 lg:text-6xl text-3xl sm:text-5xl text-center lg:text-left'
           >
             {heroSection.title}
           </h1>
-          <p
-            class='xl:text-xl lg:text-lg 2xl:text-2xl text-gray-500 text-center lg:text-left'
-          >
+          <p class='lg:text-lg text-gray-500 text-center lg:text-left'>
             {heroSection.description}
           </p>
           <a
-            class='bg-blue-500 px-6 py-3 rounded-full text-white 2xl:text-2xl 2xl:px-12 2xl:py-6'
+            class='bg-blue-500 px-6 py-3 rounded-full text-white'
             href='/#contact'>Discover more</a
           >
         </div>
@@ -92,7 +92,7 @@ const heroSection = {
           src={heroSection.img}
           alt='blah'
           widths={[240, 400, 600, 800]}
-          class='h-auto object-contain max-h-[75vh] col-span-full lg:col-start-6 2xl:col-start-7 self-end xl:col-start-6 sm:col-start-2 sm:col-span-10 md:col-span-full'
+          class='h-auto object-contain max-h-[75vh] col-span-full lg:col-start-6 self-end xl:col-start-8 sm:col-start-2 sm:col-span-10 md:col-span-full 2xl:col-start-7'
         />
       </div>
     </header>
