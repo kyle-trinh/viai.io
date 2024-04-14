@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../images/hero-img.png';
+import errorCostImage from '../images/error-cost-img.svg';
 
 const navItems = [
   {
@@ -30,17 +31,17 @@ const heroSection = {
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en' class='scroll-smooth'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta name='generator' content={Astro.generator} />
     <title>Document</title>
   </head>
-  <body class='bg-bgPrimary text-gray-800 font-light'>
+  <body class='bg-bgPrimary text-textCopy font-light'>
     <header class='h-screen relative'>
       <div
-        class='flex flex-col gap-1 absolute top-6 left-6 mobile-nav-btn z-50 md:hidden'
+        class='flex flex-col gap-1 fixed top-6 left-6 mobile-nav-btn z-50 md:hidden'
       >
         <div class='w-9 h-1 bg-gray-600'></div>
         <div class='w-9 h-1 bg-gray-600'></div>
@@ -70,10 +71,10 @@ const heroSection = {
         </ul>
       </nav>
       <div
-        class='absolute bottom-0 grid grid-cols-12 h-[90vh] sm:h-[80vh] 2xl:max-w-[1440px] 2xl:w-full 2xl:-translate-x-1/2 2xl:left-1/2'
+        class='absolute bottom-0 grid grid-cols-12 h-[90vh] sm:h-auto 2xl:max-w-[1440px] 2xl:w-full 2xl:-translate-x-1/2 2xl:left-1/2'
       >
         <div
-          class='col-span-full lg:col-span-5 lg:col-start-1 xl:col-start-2 xl:col-span-6 2xl:col-start-1 2xl:col-span-6 flex flex-col justify-end items-center px-2 gap-3 2xl:gap-6 2xl:mt-10 sm:mb-10 md:px-12 lg:items-start lg:justify-start m'
+          class='col-span-full lg:col-span-4 lg:col-start-2 xl:col-start-2 xl:col-span-5 2xl:col-start-1 2xl:col-span-6 flex flex-col justify-end items-center px-2 gap-3 2xl:gap-6 2xl:mt-10 sm:mb-10 md:px-12 lg:items-start lg:justify-start xl:-translate-y-28'
         >
           <h1
             class='xl:text-7xl font-bold text-primary lg:text-6xl text-3xl sm:text-5xl text-center lg:text-left'
@@ -92,10 +93,61 @@ const heroSection = {
           src={heroSection.img}
           alt='blah'
           widths={[240, 400, 600, 800]}
-          class='h-auto object-contain max-h-[75vh] col-span-full lg:col-start-6 self-end xl:col-start-8 sm:col-start-2 sm:col-span-10 md:col-span-full 2xl:col-start-7'
+          class='h-auto object-contain max-h-[60vh] lg:max-h-[75vh] col-span-full lg:col-start-6 self-end xl:col-start-7 sm:col-start-2 sm:col-span-10 md:col-span-full 2xl:col-start-7'
         />
       </div>
     </header>
+
+    <section class='bg-white lg:py-40 px-4 md:px-10 lg:px-0 py-20' id='why'>
+      <div
+        class='max-w-7xl mx-auto grid grid-cols-2 gap-y-16 lg:gap-y-8 gap-x-8'
+      >
+        <div class='lg:col-start-2 col-span-full lg:col-span-1 self-center'>
+          <h2 class='md:text-5xl text-4xl font-bold text-primary mb-8'>
+            The Cost of Errors
+          </h2>
+          <p class='mb-8'>
+            Prescription errors can lead to serious consequences for patients
+            and providers. Mistakes in dosage, drug interactions, or incorrect
+            medications can result in hospital readmissions, adverse effects, or
+            even life-threatening situations.
+          </p>
+          <div class='grid grid-cols-2 gap-y-6 xl:gap-x-0 gap-x-8'>
+            <div>
+              <h6
+                class='text-primary text-3xl md:text-4xl font-bold capitalize'
+              >
+                9000
+              </h6>
+              <p>prescription-related deaths/year</p>
+            </div>
+
+            <div>
+              <h6
+                class='text-primary text-3xl md:text-4xl font-bold capitalize'
+              >
+                1.5 MILLION
+              </h6>
+              <p>Suffering injuries & adverse affects</p>
+            </div>
+
+            <div>
+              <h6
+                class='text-primary text-3xl md:text-4xl font-bold capitalize'
+              >
+                $42 BILLION
+              </h6>
+              <p>Annual cost to the system</p>
+            </div>
+          </div>
+        </div>
+        <Image
+          src={errorCostImage}
+          alt=''
+          class='lg:col-start-1 col-span-full lg:col-span-1 lg:row-start-1 self-center md:max-w-[80%] max-w-full lg:max-w-full justify-self-center'
+        />
+      </div>
+    </section>
   </body>
 
   <style is:global>

@@ -11,6 +11,7 @@ export default {
       colors: {
         bgPrimary: '#E0ECFF',
         primary: '#4986F5',
+        textCopy: '#1f2937',
       },
     },
   },
