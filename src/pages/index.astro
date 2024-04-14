@@ -2,6 +2,10 @@
 import { Image } from 'astro:assets';
 import heroImage from '../images/hero-img.png';
 import errorCostImage from '../images/error-cost-img.svg';
+import first from '../images/first.png';
+import second from '../images/second.png';
+import third from '../images/third.png';
+import SectionHeader from '../components/SectionHeader.astro';
 
 const navItems = [
   {
@@ -28,6 +32,22 @@ const heroSection = {
     'Harnessing the latest in AI and NLP to reduce prescription errors and improve patient safety. Our platform analyzes prescriptions with unrivaled accuracy, catching potential mistakes before they reach the patient.',
   img: heroImage,
 };
+
+const steps = [
+  {
+    img: first,
+    title: 'ML system considering all types of records',
+  },
+
+  {
+    img: second,
+    title: 'More accurate alerts',
+  },
+  {
+    img: third,
+    title: 'Better patient outcomes',
+  },
+];
 ---
 
 <!doctype html>
@@ -148,6 +168,38 @@ const heroSection = {
         />
       </div>
     </section>
+
+    <section class='bg-bgPrimary lg:py-32 px-4 md:px-10 2xl:px-0 py-20'>
+      <div class='container mx-auto'>
+        <SectionHeader>How we're making a difference</SectionHeader>
+        <p class='max-w-5xl mb-16'>
+          Our AI platform is designed to enhance the prescription review
+          process, providing valuable insights to pharmacists and healthcare
+          professionals. By leveraging advanced NLP and machine learning
+          algorithms, we're able to identify potential errors and issues within
+          prescriptions, allowing for timely interventions and corrections.
+        </p>
+        <div
+          class='flex md:justify-between md:items-start md:max-w-5xl mx-auto md:flex-row flex-col items-center justify-start gap-8 max-w-sm'
+        >
+          {
+            steps.map(({ img, title }, index) => (
+              <div class='flex flex-col items-center gap-2 flex-1'>
+                <div class='w-12 h-12 bg-primary text-white border-blue-200 border-4 rounded-full flex items-center justify-center font-bold text-xl'>
+                  {index + 1}
+                </div>
+                <Image
+                  src={img}
+                  alt=''
+                  class='lg:h-64 md:w-auto md:h-48 w-36 h-auto'
+                />
+                <p class='text-center font-bold text-xl'>{title}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
   </body>
 
   <style is:global>
@@ -161,14 +213,12 @@ const heroSection = {
 
     const menuItems = document.querySelectorAll('.menu-item');
     for (const menuItem of menuItems) {
-      console.log(menuItem);
       menuItem.addEventListener('click', () => {
         if (
           document
             .querySelector('.nav-bar')
             ?.classList.contains('-translate-x-full')
         ) {
-          console.log('adding');
           document.querySelector('.nav-bar')?.classList.remove('translate-x-0');
         }
       });
