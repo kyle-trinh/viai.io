@@ -2,7 +2,6 @@
   <img width="195" alt="image" src="https://github.com/Venera-AI/venera-landing-page/assets/89487473/6955b0f3-527a-478d-b00f-138779e32c04">
 </div>
 
-
 # Venera AI - Landing Page
 
 This project is used to create the landing page for Venera AI Healthcare. At Venera AI, we're dedicated to transforming healthcare with cutting-edge AI technologies. The landing page shows public information such as our work, team, and vision for the future of healthcare
